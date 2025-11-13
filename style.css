@@ -42,6 +42,10 @@ body {
 
 .animation-container {
     margin-bottom: 30px;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .love-gif {
@@ -49,6 +53,244 @@ body {
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Dessert Animation Styles */
+.dessert-animation {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cupcake {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.frosting {
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+}
+
+.cherry {
+    font-size: 24px;
+    animation: wiggle 1s ease-in-out infinite;
+}
+
+.cake-base {
+    width: 70px;
+    height: 40px;
+    background: linear-gradient(135deg, #deb887, #d2691e);
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.donut, .candy, .lollipop {
+    font-size: 48px;
+    position: absolute;
+    animation: orbit 4s linear infinite;
+}
+
+.donut {
+    animation-delay: 0s;
+    top: 10%;
+    left: 20%;
+}
+
+.candy {
+    animation-delay: 1.3s;
+    top: 20%;
+    right: 20%;
+}
+
+.lollipop {
+    animation-delay: 2.6s;
+    bottom: 20%;
+    left: 15%;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px) scale(1.05);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(60px) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: rotate(180deg) translateX(60px) rotate(-180deg) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg) translateX(60px) rotate(-360deg) scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* Love Dessert Animation */
+.love-dessert-animation {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+.heart-layer {
+    font-size: 120px;
+    filter: drop-shadow(0 10px 20px rgba(233, 30, 99, 0.5));
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.sparkles {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 24px;
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 0;
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 50%;
+    right: 0;
+    animation-delay: 0.5s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.sparkle:nth-child(4) {
+    top: 50%;
+    left: 0;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-15px) scale(1.5);
+        opacity: 1;
+    }
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.floating-sweets {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.sweet {
+    position: absolute;
+    font-size: 36px;
+    animation: floatAround 3s ease-in-out infinite;
+}
+
+.sweet:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.sweet:nth-child(2) {
+    top: 15%;
+    right: 10%;
+    animation-delay: 0.75s;
+}
+
+.sweet:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+.sweet:nth-child(4) {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 2.25s;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-25px) rotate(180deg);
+        opacity: 1;
+    }
 }
 
 .question {
@@ -198,6 +440,23 @@ body {
     .love-gif {
         max-width: 200px;
     }
+    
+    .dessert-animation, .love-dessert-animation {
+        width: 250px;
+        height: 200px;
+    }
+    
+    .donut, .candy, .lollipop {
+        font-size: 36px;
+    }
+    
+    .sweet {
+        font-size: 28px;
+    }
+    
+    .heart-layer {
+        font-size: 90px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -208,5 +467,22 @@ body {
     .btn {
         padding: 12px 25px;
         font-size: 1em;
+    }
+    
+    .dessert-animation, .love-dessert-animation {
+        width: 200px;
+        height: 180px;
+    }
+    
+    .donut, .candy, .lollipop {
+        font-size: 30px;
+    }
+    
+    .sweet {
+        font-size: 24px;
+    }
+    
+    .heart-layer {
+        font-size: 70px;
     }
 }
